@@ -1,0 +1,14 @@
+.idea
+.vscode
+
+.DS_Store
+.rpt2_cache*
+.changelog
+
+*.log
+
+build
+coverage
+node_modules
+
+packages/*/dist
