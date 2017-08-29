@@ -1,6 +1,6 @@
 {
   "name": "soot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "vDom library",
   "author": "Sampo Kivistö <sampo.kivisto@live.fi>",
@@ -29,12 +29,12 @@
     "url": "https://github.com/sootjs/soot.git"
   },
   "dependencies": {
-    "soot-iv-flags": "1.0.1",
-    "soot-shared": "1.0.1",
-    "soot-vnode-flags": "1.0.1"
+    "soot-iv-flags": "1.0.2",
+    "soot-shared": "1.0.2",
+    "soot-vnode-flags": "1.0.2"
   },
   "devDependencies": {
-    "soot-utils": "1.0.1"
+    "soot-utils": "1.0.2"
   },
   "main": "index.js",
   "typings": "dist/index.d.ts"
