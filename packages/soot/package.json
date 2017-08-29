@@ -1,0 +1,47 @@
+{
+  "name": "soot",
+  "version": "1.0.1",
+  "license": "MIT",
+  "description": "vDom library",
+  "author": "Sampo Kivistö <sampo.kivisto@live.fi>",
+  "bugs": {
+    "url": "https://github.com/sootjs/soot/issues"
+  },
+  "homepage": "https://github.com/sootjs/soot#readme",
+  "keywords": [
+    "babel",
+    "react",
+    "soot",
+    "framework",
+    "interfaces",
+    "user interfaces",
+    "html",
+    "renderToString",
+    "server",
+    "dom",
+    "browser",
+    "rollup"
+  ],
+  "rollup": {
+    "bundledDependencies": [
+      "soot-shared",
+      "soot-vnode-flags",
+      "soot-iv-flags"
+    ],
+    "moduleName": "Soot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sootjs/soot.git"
+  },
+  "dependencies": {
+    "soot-iv-flags": "1.0.1",
+    "soot-shared": "1.0.1",
+    "soot-vnode-flags": "1.0.1"
+  },
+  "devDependencies": {
+    "soot-utils": "1.0.1"
+  },
+  "main": "index.js",
+  "typings": "dist/index.d.ts"
+}

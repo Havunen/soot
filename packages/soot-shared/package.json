@@ -1,0 +1,23 @@
+{
+  "name": "soot-shared",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Sampo Kivistö <sampo.kivisto@live.fi>",
+  "bugs": {
+    "url": "https://github.com/sootjs/soot/issues"
+  },
+  "homepage": "https://github.com/sootjs/soot#readme",
+  "keywords": [
+    "soot",
+    "helpers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sootjs/soot.git"
+  },
+  "rollup": {
+    "moduleName": "SootShared"
+  },
+  "main": "index.js",
+  "typings": "dist/index.d.ts"
+}

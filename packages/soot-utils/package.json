@@ -1,0 +1,15 @@
+{
+  "name": "soot-utils",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sampo Kivistö <sampo.kivisto@live.fi>",
+  "license": "ISC",
+  "rollup": {
+    "moduleName": "SootUtils"
+  },
+  "private": true
+}

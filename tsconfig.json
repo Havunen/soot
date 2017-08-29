@@ -1,0 +1,37 @@
+{
+	"version": "2.3.4",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"soot": [ "packages/soot/src" ],
+			"soot-iv-flags": [ "packages/soot-iv-flags/src" ],
+			"soot-shared": [ "packages/soot-shared/src" ],
+			"soot-utils": [ "packages/soot-utils/src" ],
+			"soot-vnode-flags": [ "packages/soot-vnode-flags/src" ]
+		},
+		"allowSyntheticDefaultImports": false,
+		"declaration": true,
+		"target": "es5",
+		"module": "es6",
+		"allowJs": false,
+		"moduleResolution": "node",
+		"preserveConstEnums": true,
+		"outDir": "build",
+		"sourceMap": false,
+    "inlineSourceMap": false,
+		"lib": [
+			"es6",
+			"es7",
+			"dom"
+		],
+		"jsx": "preserve",
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"removeComments": false,
+		"rootDir": "."
+	},
+	"include": [
+		"packages/*/src",
+		"packages/*/__tests__"
+	]
+}

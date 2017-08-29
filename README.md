@@ -1,1 +1,3 @@
-### Soot
+### SootJS
+
+vDOM library
