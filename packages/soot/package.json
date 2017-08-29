@@ -9,18 +9,12 @@
   },
   "homepage": "https://github.com/sootjs/soot#readme",
   "keywords": [
-    "babel",
-    "react",
     "soot",
-    "framework",
-    "interfaces",
-    "user interfaces",
-    "html",
-    "renderToString",
-    "server",
-    "dom",
-    "browser",
-    "rollup"
+    "sootjs",
+    "vNode",
+    "library",
+    "performance",
+    "fast"
   ],
   "rollup": {
     "bundledDependencies": [
