@@ -54,7 +54,6 @@
     "rollup": "lerna exec -- node ../../scripts/rollup/build.js",
     "test": "cross-env NODE_ENV=test jest",
     "test:coverage": "jest --coverage",
-    "test:browser": "npm run --prefix fixtures/browser test",
     "uninstall": "lerna clean && rm -rf node_modules"
   },
   "devDependencies": {
