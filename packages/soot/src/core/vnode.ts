@@ -10,24 +10,14 @@ export interface Props {
   [k: string]: any;
 }
 
-export class VNode {
-  public c: any;
-  public cN: string;
-  public f: number;
-  public k: string | number | null;
-  public p: Props | null;
-  public r;
-  public t: Type;
-
-  constructor(children, className, flags, key, props, ref, type) {
-    this.c = isUndefined(children) ? null : children;
-    this.cN = isUndefined(className) ? null : className;
-    this.f = flags;
-    this.k = isUndefined(key) ? null : key;
-    this.p = isUndefined(props) ? null : props;
-    this.r = isUndefined(ref) ? null : ref;
-    this.t = type;
-  }
+export interface VNode {
+  c: any;
+  cN: string;
+  f: number;
+  k: string | number | null;
+  p: Props | null;
+  r;
+  t: Type;
 }
 
 /**
@@ -81,7 +71,15 @@ export function V(
     }
   }
 
-  const vNode = new VNode(children, className, flags, key, props, ref, type);
+  const vNode = {
+    c: isUndefined(children) ? null : children,
+    cN: isUndefined(className) ? null : className,
+    f: flags,
+    k: isUndefined(key) ? null : key,
+    p: isUndefined(props) ? null : props,
+    r: isUndefined(ref) ? null : ref,
+    t: type
+  };
 
   if (process.env.NODE_ENV !== "production") {
     validate(vNode);

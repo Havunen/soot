@@ -14,7 +14,7 @@ import {
   warning
 } from "soot-shared";
 import { VNodeFlags } from "soot-vnode-flags";
-import { IV } from "../core/iv";
+import { createIV, IV } from "../core/iv";
 import { isVNode, Props, VNode } from "../core/vnode";
 import {
   booleanProps,
@@ -182,7 +182,7 @@ export function render(
     if (isInvalid(input)) {
       return;
     }
-    rootIV = new IV(input, 0, null);
+    rootIV = createIV(input, 0, null);
     lifecycle = [];
     mount(rootIV, input as VNode, parentDom as Element, lifecycle, false, true);
 
@@ -353,7 +353,7 @@ export function patchChildren(
     } else if (isStringOrNumber(nextInput)) {
       (parentDOM.firstChild as any).nodeValue = nextInput;
     } else if (isVNode(nextInput)) {
-      childIVs = new IV(nextInput, 0, null) as IV;
+      childIVs = createIV(nextInput, 0, null) as IV;
       const newDOM = mount(
         childIVs,
         nextInput,
@@ -383,7 +383,7 @@ export function patchChildren(
         setTextContent(parentDOM, nextInput);
         parentIV.f = IVFlags.HasTextChildren;
       } else if (isVNode(nextInput)) {
-        childIVs = new IV(nextInput, 0, null) as IV;
+        childIVs = createIV(nextInput, 0, null) as IV;
         mount(childIVs, nextInput, parentDOM, lifecycle, childrenIsSVG, true);
         parentIV.c = childIVs;
         parentIV.f = IVFlags.HasBasicChildren;
@@ -479,7 +479,7 @@ export function patchChildren(
     } else {
       // vNode
       removeAllChildren(parentIV, parentDOM, childIVs);
-      childIVs = new IV(nextInput, 0, null) as IV;
+      childIVs = createIV(nextInput, 0, null) as IV;
       mount(childIVs, nextInput, parentDOM, lifecycle, childrenIsSVG, true);
       parentIV.c = childIVs;
       parentIV.f = IVFlags.HasBasicChildren;
@@ -618,7 +618,7 @@ export function patchNonKeyedChildren(
         nextNode = null;
       }
     } else if (!isInvalid(nextChild)) {
-      newChildIVs = new IV(nextChild, j, null);
+      newChildIVs = createIV(nextChild, j, null);
 
       insertOrAppend(
         newChildIVs,
@@ -708,7 +708,7 @@ export function patchKeyedChildren(
 
       while (bStart <= bEnd) {
         node = b[bStart];
-        const childIV = new IV(node, bStart, node.k);
+        const childIV = createIV(node, bStart, node.k);
         insertOrAppend(
           childIV,
           parentDOM,
@@ -767,7 +767,7 @@ export function patchKeyedChildren(
           nextPos = pos + 1;
           nextNode = nextPos < bLength ? newChildIVs[nextPos].d : null;
 
-          const childIV = new IV(node, bStart, node.k);
+          const childIV = createIV(node, bStart, node.k);
 
           insertOrAppend(
             childIV,
@@ -798,7 +798,7 @@ export function patchKeyedChildren(
         bNode = b[i];
 
         if (isUndefined(newChildIVs[i])) {
-          const iv = new IV(bNode, i, bNode.k);
+          const iv = createIV(bNode, i, bNode.k);
 
           insertOrAppend(
             iv,

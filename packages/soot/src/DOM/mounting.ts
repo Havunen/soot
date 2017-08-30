@@ -10,7 +10,7 @@ import {
   throwError
 } from "soot-shared";
 import { VNodeFlags } from "soot-vnode-flags";
-import { IV } from "../core/iv";
+import { createIV, IV } from "../core/iv";
 import { VNode } from "../core/vnode";
 import { svgNS } from "./constants";
 import { Component, patchProp } from "./rendering";
@@ -122,7 +122,7 @@ export function mountElement(
         mountArrayChildren(iv, children, dom, lifecycle, childrenIsSVG, false);
       } else {
         // VNode
-        const childIV = new IV(children as VNode, 0, null);
+        const childIV = createIV(children as VNode, 0, null);
 
         iv.c = childIV;
         iv.f = IVFlags.HasBasicChildren;
@@ -181,7 +181,7 @@ export function mountArrayChildren(
             : false;
         iv.f = isKeyed ? IVFlags.HasKeyedChildren : IVFlags.HasNonKeydChildren;
       }
-      const childIV = new IV(child, i, child.k);
+      const childIV = createIV(child, i, child.k);
 
       (iv.c as IV[]).push(childIV);
       mount(childIV, child, dom, lifecycle, isSVG, true);
@@ -233,7 +233,7 @@ export function mountComponent(
   }
 
   if (!isInvalid(renderOutput)) {
-    iv.c = childIV = new IV(renderOutput, 0, null);
+    iv.c = childIV = createIV(renderOutput, 0, null);
 
     childIV.d = dom = mount(
       childIV,
